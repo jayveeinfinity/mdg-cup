@@ -17,6 +17,9 @@ use App\Http\Controllers\SocialAuthController;
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
+Route::get('/league-rules', function () {
+    return view('pages.league-rules');
+})->name('league-rules');
 Route::get('/terms-and-conditions', function () {
     return view('pages.terms-and-conditions');
 })->name('terms-and-conditions');
