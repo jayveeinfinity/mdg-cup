@@ -326,19 +326,54 @@
             <div class="section-inner">
                 <div class="section-title-area text-center section-ttile-area2">
                     <h1 class="section-title">HOW TO JOIN?</h1>
-                    <h5>This steps must complete to become officially participate the MDG Cup - Mulawin Open League Basketball</h5>
                 </div>
-                <section class="how-to-join">
-                    <h3>Step 1: Team Registration</h3>
-                    <ul>
-                        <li><p>To register, sign in using one (1) gmail account of the representative of the team. In this step, you need to fill in all the information needed such as <strong>Team name</strong>, <strong>Coach name</strong>, <strong>Contact Information</strong>, <strong>Player Details</strong> and etc.</p></li>
-                    </ul>
-                    <h3>Step 2: Registration Fee</h3>
-                    <p>
-                        MDG Cup has a registration fee of <strong>Php 5,000.00</strong>.<br>You can pay full amount (Php 5,000.00) or 50% partial amount (Php 2,500.00) as reservation fee.
-                    </p>
-                    <h3>Step 3: Fill up Jersey Forms</h3>
-                </section>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="match-wrapper">
+                            <div class="logo">
+                                <img src="assets/images/icons/club-7.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <p class="date">August 11, 2023</p>
+                                <p class="time">5:45 Pm</p>
+                                <h3 class="team">Dragons <span>VS</span>  Manhut</h3>
+                            </div>
+                            <div class="logo">
+                                <img src="assets/images/icons/club-8.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="match-wrapper">
+                            <div class="logo">
+                                <img src="assets/images/icons/club-9.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <p class="date">August 11, 2023</p>
+                                <p class="time">5:45 Pm</p>
+                                <h3 class="team">Weston <span>VS</span>  Miland</h3>
+                            </div>
+                            <div class="logo">
+                                <img src="assets/images/icons/club-10.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="match-wrapper">
+                            <div class="logo">
+                                <img src="assets/images/icons/club-11.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <p class="date">August 11, 2023</p>
+                                <p class="time">5:45 Pm</p>
+                                <h3 class="team">Bulls <span>VS</span>  Interko</h3>
+                            </div>
+                            <div class="logo">
+                                <img src="assets/images/icons/club-12.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
