@@ -8082,9 +8082,17 @@ tr:first-child {
 .banner2 .slider-button .swiper-btn.slide-next i {
   margin-left: 10px;
 }
-
+.banner3.home-3 .banner-bg {
+  background-image: url('/storage/images/backgrounds/mulawin-basketball-court.jpg');
+  background-position: center;
+  padding-top: 260px;
+  padding-bottom: 80px;
+}
+.banner3.nfl .banner-bg::before {
+  background: rgba(0, 0, 0, 0.8);
+}
 .banner3.home-four .banner-bg {
-  background-image: url('/storage/backgrounds/osip-ballers.jpg');
+  background-image: url('/storage/images/backgrounds/osip-ballers.jpg');
   background-position: center;
   padding-top: 480px;
   padding-bottom: 80px;
@@ -8095,17 +8103,17 @@ tr:first-child {
   }
 }
 @media (max-width: 757px) {
-  .banner3.home-four .banner-bg {
+  .banner3.home-four .banner-bg, .banner3.home-3 .banner-bg {
     padding-top: 250px;
   }
 }
 @media (max-width: 576px) {
-  .banner3.home-four .banner-bg {
+  .banner3.home-four .banner-bg, .banner3.home-3 .banner-bg {
     padding-top: 200px;
   }
 }
 @media (max-width: 450px) {
-  .banner3.home-four .banner-bg {
+  .banner3.home-four .banner-bg, .banner3.home-3 .banner-bg {
     padding-top: 150px;
   }
 }
@@ -8121,7 +8129,7 @@ tr:first-child {
   top: unset;
 }
 @media (max-width: 991px) {
-  .banner3.home-four .banner-bg::before {
+  .banner3.home-four .banner-bg::before, .banner3.home-3 .banner-bg::before {
     width: 300px;
     height: 300px;
     bottom: 0;
@@ -8129,7 +8137,7 @@ tr:first-child {
   }
 }
 @media (max-width: 768px) {
-  .banner3.home-four .banner-bg::before {
+  .banner3.home-four .banner-bg::before, .banner3.home-3 .banner-bg::before {
     display: none;
   }
 }
@@ -8836,9 +8844,9 @@ tr:first-child {
 }
 
 .inner-page-banner {
-  background-image: url("../images/banner/bannerbg-inner.jpg");
+  background-image: url("/storage/images/backgrounds/osip-ballers-2.jpg");
   background-size: cover;
-  background-position: bottom;
+  background-position: 100% 60%;
   padding-top: 260px;
   padding-bottom: 60px;
 }
@@ -24522,8 +24530,8 @@ tr:first-child {
   font-weight: 600;
   line-height: 106px;
   text-transform: uppercase;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ECECEC), to(rgba(236, 236, 236, 0)));
-  background: linear-gradient(180deg, #ECECEC 50%, rgba(236, 236, 236, 0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ff8121), to(rgba(236, 236, 236, 0)));
+  background: linear-gradient(180deg, #ff8121 50%, rgba(236, 236, 236, 0) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
