@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\User;
+use Illuminate\Http\Request;
 use App\Models\GoogleUserInfo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Request;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialAuthController extends Controller
