@@ -66,6 +66,7 @@
             <div class="bottom-area-inner">
                 <span class="copyright">COPYRIGHT &amp; DESIGN BY <span class="brand">INFINITY BRACKETS</span> - 2024 template from by KESTER</span>
                 <div class="footer-bottom-links">
+                    <a href="{{ route('league-rules') }}">LEAGUE RULES</a>
                     <a href="{{ route('terms-and-conditions') }}">TERMS &amp; CONDITONS</a>
                     <a href="{{ route('privacy-policy') }}">PRIVACY POLICY</a>
                     <a href="{{ route('faq') }}">FAQ</a>
