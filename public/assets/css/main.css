@@ -13791,8 +13791,8 @@ tr:first-child {
 }
 .rts-team-section .team-section-inner .team-wraper .player-card .number {
   position: absolute;
-  top: 10px;
-  left: 40px;
+  top: -10px;
+  left: 20px;
   font-size: 80px;
   color: #e7e7e7;
   font-weight: 700;

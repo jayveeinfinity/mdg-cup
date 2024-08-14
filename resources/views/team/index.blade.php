@@ -30,7 +30,7 @@
                             <div class="team-wraper">
                                 <div class="player-card">
                                     <a class="image" href="team-details.html"><img src="storage/images/players/default.png" alt=""></a>
-                                    <div class="number">{{ toLongPos($player->position) }}</div>
+                                    <div class="number">{{ $player->jersey_number }}</div>
                                     <!-- <ul class="social-area">
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -38,7 +38,7 @@
                                     </ul> -->
                                 </div>
                                 <div class="profile">
-                                    <p class="position">{{ $player->position }}</p>
+                                    <p class="position">{{ toLongPos($player->position) }} ({{ $player->position }})</p>
                                     <a href="#" class="name text-uppercase">{{ $player->player_name }}</a>
                                 </div>
                             </div>
