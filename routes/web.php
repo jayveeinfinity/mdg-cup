@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialAuthController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,11 @@ Route::get('/privacy-policy', function () {
 Route::get('/faq', function () {
     return view('pages.faq');
 })->name('faq');
+Route::get('/about-us', function () {
+    return view('pages.about-us');
+})->name('about-us');
 Route::get('/contact-us', function () {
-    return view('contacts-us');
+    return view('pages.contact-us');
 })->name('contact-us');
 Route::get('auth/google', [SocialAuthController::class, 'redirectToGoogle'])->name('google-auth');
 Route::get('auth/google/callback', [SocialAuthController::class, 'handleGoogleCallback'])->name('google-auth-callback');
@@ -42,15 +46,7 @@ Route::get('auth/signout', [SocialAuthController::class, 'logout'])->name('signo
 |--------------------------------------------------------------------------
 */
 Route::middleware('auth')->group(function () {
-    Route::get('myteam', function() {
-        return view('team.index');
-    })->name('team.index');
-    Route::get('team-registration', function() {
-        return view('team.create');
-    })->name('team-registeration');
-    Route::post('team/store', function() {
-        $data = request()->get('players');
-
-        dd($data);
-    })->name('team.store');
+    Route::get('myteam', [TeamController::class, 'index'])->name('team.index');
+    Route::get('team-registration', [TeamController::class, 'create'])->name('team-registration');
+    Route::post('team/store', [TeamController::class, 'store'])->name('team.store');
 });

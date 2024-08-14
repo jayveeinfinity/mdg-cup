@@ -11,7 +11,7 @@
                         <li><a class="current-page" href="#">Team</a></li>
                     </ul>
                 </div>
-                <h1 class="banner-heading">MY TEAM</h1>
+                <h1 class="banner-heading">{{ $myTeam->team_name }}</h1>
             </div>
         </div>
     </div>
@@ -21,117 +21,33 @@
 @section('main-content')
 <div class="container">
     <section class="p-5">
-        <form action="{{ route('team.store') }}" method="POST">
-            @csrf
-            <div class="row mb-3">
-                <div class="col-6">
-                    <label for="team_name">Team Name:</label>
-                    <input class="form-control form-control-lg" type="text" name="team_name" required>
-                </div>
-                <div class="col-6">
-                    <label for="coach_name">Coach Name:</label>
-                    <input class="form-control form-control-lg" type="text" name="coach_name" required>
-                </div>
-            </div>
-            <h3>Players: <button type="button" class="btn btn-warning" id="addPlayer">Add Another Player</button></h3>
-            <hr>
-            <div class="mb-3" id="players">
-                <h6>Captain Ball</h6>
+        <div class="rts-team-section inner section-gap">
+            <div class="container">
+                <div class="team-section-inner inner">
                     <div class="row">
-                        <div class="col-4">
-                            <label label for="players[0][player_name]">Name:</label>
-                            <input class="form-control form-control-lg" type="text" name="players[0][player_name]" required>
+                        @foreach($team->players()->get() as $player)
+                        <div class="col-xl-3 col-md-4 col-sm-6">
+                            <div class="team-wraper">
+                                <div class="player-card">
+                                    <a class="image" href="team-details.html"><img src="storage/images/players/default.png" alt=""></a>
+                                    <div class="number">{{ toLongPos($player->position) }}</div>
+                                    <!-- <ul class="social-area">
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul> -->
+                                </div>
+                                <div class="profile">
+                                    <p class="position">{{ $player->position }}</p>
+                                    <a href="#" class="name text-uppercase">{{ $player->player_name }}</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <label for="players[0][position]">Position:</label>
-                            <select class="form-control form-control-lg" name="players[0][position]" required>
-                                <option value="" selected disabled>Choose position...</option>
-                                <option value="PG">PG - Point Guard</option>
-                                <option value="SG">SG - Shooting Guard</option>
-                                <option value="SF">SF - Small Forward</option>
-                                <option value="PF">PF - Power Forward</option>
-                                <option value="C">C - Center</option>
-                            </select>
-                        </div>
-                        <div class="col-2">
-                            <label for="players[0][age]">Age:</label>
-                            <input class="form-control form-control-lg" type="number" name="players[0][age]" required>
-                        </div>
-                        <div class="col-2">
-                            <label for="players[0][jersey_number]">Jersey Number:</label>
-                            <input class="form-control form-control-lg" type="number" name="players[0][jersey_number]" required>
-                        </div>
-                    </div>
-                    <hr>
-                <h6>Player#1</h6>
-                <div class="row">
-                    <div class="col-4">
-                        <label label for="players[1][player_name]">Name:</label>
-                        <input class="form-control form-control-lg" type="text" name="players[1][player_name]" required>
-                    </div>
-                    <div class="col-4">
-                        <label for="players[1][position]">Position:</label>
-                        <select class="form-control form-control-lg" name="players[1][position]" required>
-                            <option value="" selected disabled>Choose position...</option>
-                            <option value="PG">PG - Point Guard</option>
-                            <option value="SG">SG - Shooting Guard</option>
-                            <option value="SF">SF - Small Forward</option>
-                            <option value="PF">PF - Power Forward</option>
-                            <option value="C">C - Center</option>
-                        </select>
-                    </div>
-                    <div class="col-2">
-                        <label for="players[0][age]">Age:</label>
-                        <input class="form-control form-control-lg" type="number" name="players[0][age]" required>
-                    </div>
-                    <div class="col-2">
-                        <label for="players[0][jersey_number]">Jersey Number:</label>
-                        <input class="form-control form-control-lg" type="number" name="players[0][jersey_number]" required>
+                        @endforeach
                     </div>
                 </div>
-                <hr>
             </div>
-            <button type="submit" class="btn btn-warning">Submit</button>
-        </form>
+        </div>
     </section>
 </div>
-<script>
-    let playerIndex = 1;
-    document.getElementById('addPlayer').addEventListener('click', function(e) {
-        e.preventDefault();
-        if(playerIndex == 14) {
-            alert("Maximum of 15 players only.");
-            return;
-        }
-        let playerTemplate = `
-        <h6>Player#${playerIndex + 1}</h6>
-        <div class="row">
-            <div class="col-4">
-                <label label for="players[0][player_name]">Name:</label>
-                <input class="form-control form-control-lg" type="text" name="players[${playerIndex}][player_name]" required>
-            </div>
-            <div class="col-4">
-                <label for="players[0][position]">Position:</label>
-                <select class="form-control form-control-lg" name="players[${playerIndex}][position]" required>
-                    <option value="" selected disabled>Choose position...</option>
-                    <option value="PG">PG - Point Guard</option>
-                    <option value="SG">SG - Shooting Guard</option>
-                    <option value="SF">SF - Small Forward</option>
-                    <option value="PF">PF - Power Forward</option>
-                    <option value="C">C - Center</option>
-                </select>
-            </div>
-            <div class="col-2">
-                <label for="players[0][age]">Age:</label>
-                <input class="form-control form-control-lg" type="number" name="players[${playerIndex}][age]" required>
-            </div>
-            <div class="col-2">
-                <label for="players[0][jersey_number]">Jersey Number:</label>
-                <input class="form-control form-control-lg" type="number" name="players[${playerIndex}][jersey_number]" required>
-            </div>
-        </div><hr>`;
-        document.getElementById('players').insertAdjacentHTML('beforeend', playerTemplate);
-        playerIndex++;
-    });
-</script>
 @endsection
