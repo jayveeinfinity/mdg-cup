@@ -24,5 +24,6 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('*', "App\Http\ViewComposers\GoogleUserInfo");
+        view()->composer('*', "App\Http\ViewComposers\MyTeam");
     }
 }

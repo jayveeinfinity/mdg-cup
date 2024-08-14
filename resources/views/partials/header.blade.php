@@ -32,9 +32,15 @@
                                     <img src="{{ $googleUserInfo->picture }}" class="rounded" height="24px"> {{ auth()->user()->name }} |
                                 </a>
                             @endauth
-                            <a href="{{ route('team-registeration') }}" class="sign-up-btn">
-                                <span class="bg-dark text-white rounded px-3 text-uppercase">Register your team</span>
-                            </a>
+                            @if($myTeam)
+                                <a href="{{ route('team.index') }}" class="sign-up-btn">
+                                    <span class="bg-dark text-white rounded px-3 text-uppercase">My team</span>
+                                </a>
+                            @else
+                                <a href="{{ route('team-registration') }}" class="sign-up-btn">
+                                    <span class="bg-dark text-white rounded px-3 text-uppercase">Register your team</span>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -56,7 +62,7 @@
                                         <li class="dropdown-li"><a class="dropdown-link" href="index-eight.html">Home Eight (Volleyball)</a></li>
                                     </ul> -->
                                 </li>
-                                <li><a class="menu-item" href="about.html">About</a></li>
+                                <li><a class="menu-item" href="{{ route('about-us') }}">About</a></li>
                                 <!-- <li class="has-dropdown"><a class="menu-item" href="#">Pages</a>
                                     <ul class="dropdown-ul mega-dropdown">
                                         <li class="mega-dropdown-li">
@@ -120,9 +126,9 @@
                                                 Details</a></li>
                                     </ul>
                                 </li> -->
-                                <li><a class="menu-item" href="updates.html">Updates</a></li>
-                                <li><a class="menu-item" href="faq.html">FAQ</a></li>
-                                <li><a class="menu-item" href="contact-us.html">Contact Us</a></li>
+                                <!-- <li><a class="menu-item" href="updates.html">Updates</a></li> -->
+                                <li><a class="menu-item" href="{{ route('team-registration') }}">FAQ</a></li>
+                                <li><a class="menu-item" href="{{ route('contact-us') }}">Contact Us</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -168,7 +174,7 @@
             </div>
         </div>
     </div>
-    <div class="cart-bar">
+    <!-- <div class="cart-bar">
         <div class="cart-header">
             <h3 class="cart-heading">MY CART (3 ITEMS)</h3>
             <div class="close-cart"><i class="fal fa-times"></i></div>
@@ -266,10 +272,10 @@
             <a href="checkout.html" class="checkout-btn cart-btn">PROCEED TO CHECKOUT</a>
             <a href="cart.html" class="view-btn cart-btn">VIEW CART</a>
         </div>
-    </div>
+    </div> -->
 
     <!--================= Slide Bar Start Here =================-->
-    <aside class="slide-bar">
+    <!-- <aside class="slide-bar">
         <div class="offset-sidebar">
             <button class="slide-bar-close ml--30"><i class="fal fa-times"></i></button>
             <div class="offset-widget offset-logo mb-30">
@@ -278,7 +284,6 @@
                 </a>
             </div>
         </div>
-        <!-- side-mobile-menu start -->
         <nav class="side-mobile-menu side-mobile-menu1">
             <ul id="mobile-menu-active" class="metismenu">
                 <li class="has-dropdown firstlvl">
@@ -358,14 +363,13 @@
                 <li><a class="mm-link" href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <!-- side-mobile-menu end -->
         <div class="side-bar-social-links">
             <a href="#0" class="platform"><i class="fab fa-facebook-f"></i></a>
             <a href="#0" class="platform"><i class="fab fa-twitter"></i></a>
             <a href="#0" class="platform"><i class="fab fa-behance"></i></a>
             <a href="#0" class="platform"><i class="fab fa-youtube"></i></a>
         </div>
-    </aside>
+    </aside> -->
     <!--================= Slide Bar Start Here =================-->
 
     <!--================= Banner Section Start Here =================-->
