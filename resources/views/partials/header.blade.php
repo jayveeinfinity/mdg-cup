@@ -127,7 +127,7 @@
                                     </ul>
                                 </li> -->
                                 <!-- <li><a class="menu-item" href="updates.html">Updates</a></li> -->
-                                <li><a class="menu-item" href="{{ route('team-registration') }}">FAQ</a></li>
+                                <li><a class="menu-item" href="{{ route('faq') }}">FAQ</a></li>
                                 <li><a class="menu-item" href="{{ route('contact-us') }}">Contact Us</a></li>
                             </ul>
                         </nav>

@@ -9,10 +9,11 @@ class MyTeam {
 
     public function compose(View $view) {
         $authUser = auth()->user();
+        $myTeam = NULL;
+        
         if($authUser) {
             $myTeam = Team::where('user_id', $authUser->id)->first();
-
-            $view->with('myTeam', $myTeam);
         }
+        $view->with('myTeam', $myTeam);
     }
 }

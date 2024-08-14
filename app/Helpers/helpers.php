@@ -10,16 +10,16 @@ if (!function_exists('toLongPos')) {
                 $myPositon = 'Point Guard';
                 break;
             case 'SG':
-                $myPositon = 'Point Guard';
+                $myPositon = 'Shooting Guard';
                 break;
             case 'SF':
-                $myPositon = 'Point Guard';
+                $myPositon = 'Small Forward';
                 break;
             case 'PF':
-                $myPositon = 'Point Guard';
+                $myPositon = 'Power Forward';
                 break;
             case 'C':
-                $myPositon = 'Point Guard';
+                $myPositon = 'Center';
                 break;
         }
 
