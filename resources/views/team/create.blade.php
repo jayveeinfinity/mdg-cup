@@ -33,7 +33,7 @@
                     <input class="form-control form-control-lg" type="text" name="coach_name" required>
                 </div>
             </div>
-            <h3>Players: <button type="button" class="btn btn-warning" id="addPlayer">Add Another Player</button></h3>
+            <!--     <h3>Players: <button type="button" class="btn btn-warning" id="addPlayer">Add Another Player</button></h3>
             <hr>
             <div class="mb-3" id="players">
                 <h6>Captain Ball</h6>
@@ -62,7 +62,7 @@
                             <input class="form-control form-control-lg" type="number" name="players[0][jersey_number]" required>
                         </div>
                     </div>
-                    <hr>
+                <hr>
                 <h6>Player#1</h6>
                 <div class="row">
                     <div class="col-4">
@@ -82,56 +82,17 @@
                     </div>
                     <div class="col-2">
                         <label for="players[0][age]">Age:</label>
-                        <input class="form-control form-control-lg" type="number" name="players[0][age]" required>
+                        <input class="form-control form-control-lg" type="number" name="players[1][age]" required>
                     </div>
                     <div class="col-2">
                         <label for="players[0][jersey_number]">Jersey Number:</label>
-                        <input class="form-control form-control-lg" type="number" name="players[0][jersey_number]" required>
+                        <input class="form-control form-control-lg" type="number" name="players[1][jersey_number]" required>
                     </div>
                 </div>
                 <hr>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-warning">Submit</button>
         </form>
     </section>
 </div>
-<script>
-    let playerIndex = 1;
-    document.getElementById('addPlayer').addEventListener('click', function(e) {
-        e.preventDefault();
-        if(playerIndex == 14) {
-            alert("Maximum of 15 players only.");
-            return;
-        }
-        let playerTemplate = `
-        <h6>Player#${playerIndex + 1}</h6>
-        <div class="row">
-            <div class="col-4">
-                <label label for="players[0][player_name]">Name:</label>
-                <input class="form-control form-control-lg" type="text" name="players[${playerIndex}][player_name]" required>
-            </div>
-            <div class="col-4">
-                <label for="players[0][position]">Position:</label>
-                <select class="form-control form-control-lg" name="players[${playerIndex}][position]" required>
-                    <option value="" selected disabled>Choose position...</option>
-                    <option value="PG">PG - Point Guard</option>
-                    <option value="SG">SG - Shooting Guard</option>
-                    <option value="SF">SF - Small Forward</option>
-                    <option value="PF">PF - Power Forward</option>
-                    <option value="C">C - Center</option>
-                </select>
-            </div>
-            <div class="col-2">
-                <label for="players[0][age]">Age:</label>
-                <input class="form-control form-control-lg" type="number" name="players[${playerIndex}][age]" required>
-            </div>
-            <div class="col-2">
-                <label for="players[0][jersey_number]">Jersey Number:</label>
-                <input class="form-control form-control-lg" type="number" name="players[${playerIndex}][jersey_number]" required>
-            </div>
-        </div><hr>`;
-        document.getElementById('players').insertAdjacentHTML('beforeend', playerTemplate);
-        playerIndex++;
-    });
-</script>
 @endsection
