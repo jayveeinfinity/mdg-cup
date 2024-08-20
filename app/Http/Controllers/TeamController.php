@@ -29,6 +29,11 @@ class TeamController extends Controller
 
         return view('team.create');
     }
+    
+    public function show(Team $team)
+    {
+        dd($team->first());
+    }
 
     public function store(Request $request)
     {
