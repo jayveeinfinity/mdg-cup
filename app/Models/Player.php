@@ -15,4 +15,9 @@ class Player extends Model
     {
         return $this->belongsTo(Team::class);
     }
+    
+    public function image()
+    {
+        return $this->hasOne(PlayerImage::class);
+    }
 }

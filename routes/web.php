@@ -48,7 +48,13 @@ Route::get('auth/signout', [SocialAuthController::class, 'logout'])->name('signo
 */
 Route::middleware('auth')->group(function () {
     Route::get('myteam', [TeamController::class, 'index'])->name('team.index');
+    Route::get('myteam/player/{id}', [PlayerController::class, 'show'])->name('team.player.show');
+
     Route::get('team-registration', [TeamController::class, 'create'])->name('team-registration');
+
+    Route::get('team/{id}', [TeamController::class, 'show'])->name('team.show');
     Route::post('team/store', [TeamController::class, 'store'])->name('team.store');
+
+    Route::get('player/{id}', [PlayerController::class, 'show'])->name('player.show');
     Route::post('player/store', [PlayerController::class, 'store'])->name('player.store');
 });
