@@ -27,6 +27,7 @@
                     <div>
                         <button type="button" class="btn btn-warning">My Team</button>
                         <button type="button" class="btn btn-warning">Schedules</button>
+                        <button type="button" class="btn btn-warning">Payments</button>
                     </div>
                     <div>
                         <button type="button" class="btn btn-warning"><i class="fas fa-cog"></i> Manage team</button>

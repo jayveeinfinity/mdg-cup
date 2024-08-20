@@ -46,24 +46,26 @@ class PlayerController extends Controller
             $image = $request->file('image');
 
             // Open the image file
-            $img = Image::make($image->getRealPath());
+            // $img = Image::make($image->getRealPath());
 
-            // Get the dimensions of the image
-            $width = $img->width();
-            $height = $img->height();
+            // // Get the dimensions of the image
+            // $width = $img->width();
+            // $height = $img->height();
 
-            // Determine the size of the square (1:1 ratio)
-            $size = min($width, $height);
+            // // Determine the size of the square (1:1 ratio)
+            // $size = min($width, $height);
 
-            // Crop the image centered
-            $img->crop($size, $size, ($width - $size) / 2, ($height - $size) / 2);
+            // // Crop the image centered
+            // $img->crop($size, $size, ($width - $size) / 2, ($height - $size) / 2);
 
-            // Optionally, resize the cropped image to a specific size (e.g., 500x500)
-            $img->resize(500, 500);
+            // // Optionally, resize the cropped image to a specific size (e.g., 500x500)
+            // $img->resize(457, 539);
 
-            $filename  = time().'.jpg';
-            $filepath = $img->save(storage_path('/app/public/images/players/' . $filename));
-            $filesize = $img->getSize();
+            $filename  = time().'.png';
+            $image->storeAs('public/images/players', $filename);
+            
+            $filepath = 'storage/images/players/' . $filename;
+            $filesize = $image->getSize();
             $filetype = 'image/jpeg';
     
             // Save image details to the database or perform other actions
@@ -77,7 +79,7 @@ class PlayerController extends Controller
         }
 
         return response()->json([
-            'message' => "Player successfully added"
+            'message' => "Player successfully added!"
         ]);
     }
 }
