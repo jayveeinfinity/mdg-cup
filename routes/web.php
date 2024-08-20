@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SocialAuthController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\SocialAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +50,5 @@ Route::middleware('auth')->group(function () {
     Route::get('myteam', [TeamController::class, 'index'])->name('team.index');
     Route::get('team-registration', [TeamController::class, 'create'])->name('team-registration');
     Route::post('team/store', [TeamController::class, 'store'])->name('team.store');
+    Route::post('player/store', [PlayerController::class, 'store'])->name('player.store');
 });

@@ -11,11 +11,22 @@ class TeamController extends Controller
 {
     public function index() {
         $team = Team::where('user_id', Auth::id())->first();
+
+        if(!$team) {
+            return redirect()->route('team-registration');
+        }
+
         return view('team.index', compact('team'));
     }
     
     public function create()
     {
+        $team = Team::where('user_id', Auth::id())->first();
+
+        if($team) {
+            return redirect()->route('team.index');
+        }
+
         return view('team.create');
     }
 
@@ -23,11 +34,7 @@ class TeamController extends Controller
     {
         $request->validate([
             'team_name' => 'required|string|max:255',
-            'coach_name' => 'required|string|max:255',
-            'players.*.player_name' => 'required|string|max:255',
-            'players.*.jersey_number' => 'required|integer',
-            'players.*.age' => 'required|integer',
-            'players.*.position' => 'required|string|max:255',
+            'coach_name' => 'required|string|max:255'
         ]);
 
         $team = Team::create([
@@ -35,20 +42,6 @@ class TeamController extends Controller
             'team_name' => $request->team_name,
             'coach_name' => $request->coach_name
         ]);
-
-        foreach ($request->players as $player) {
-            Player::create([
-                'team_id' => $team->id,
-                'player_name' => $player['player_name'],
-                'jersey_number' => $player['jersey_number'],
-                'age' => $player['age'],
-                'position' => $player['position']
-            ]);
-        }
-
-        $captainBall = Player::where('player_name', $request->players[0]['player_name'])->first();
-        $captainBall->is_captain_ball = true;
-        $captainBall->save();
 
         return redirect()->route('team.index')->with('success', 'Team registered successfully!');
     }

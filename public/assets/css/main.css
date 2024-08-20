@@ -110,6 +110,12 @@ p {
   }
 }
 
+/* MY CUSTOM STYLES */
+.bg-main-orange {
+  background-color: #da6a14 !important;
+}
+/* END MY CUSTOM SYLES */
+
 :root[data-theme=dark] body {
   background: black;
 }
@@ -8662,7 +8668,7 @@ tr:first-child {
 .banner-bg::before {
   content: "";
   mix-blend-mode: multiply;
-  background-color: rgb(134, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
   opacity: 0.902;
   position: absolute;
   top: 0;
@@ -8844,7 +8850,7 @@ tr:first-child {
 }
 
 .inner-page-banner {
-  background-image: url("/storage/images/backgrounds/osip-ballers-2.jpg");
+  background-image: url("/storage/images/backgrounds/osip-ballers.jpg");
   background-size: cover;
   background-position: 100% 60%;
   padding-top: 260px;
